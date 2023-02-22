@@ -139,3 +139,11 @@ That can be done with something like:
 `shasum < disk.vdi`
 
 Keep your disk image somewhere for the peer-evaluation.
+
+How to mount a drive?
+
+```
+sudo mount -v -t ext4 /dev/sdb3 $LFS
+sudo mount -v -t vfat /dev/sdb1 $LFS/boot
+sudo /sbin/swapon -v /dev/sdb2
+```
