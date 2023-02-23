@@ -164,3 +164,22 @@ How to create an environmental variable for multithread compilation with Makefil
 ```
 export MAKEFLAGS="-j$(expr $(nproc) \+ 1)"
 ```
+
+How to mount the virtual Kernel drives?
+```Bash
+mount -v --bind /dev $LFS/dev
+mount -v --bind /dev/pts $LFS/dev/pts
+mount -vt proc proc $LFS/proc
+mount -vt sysfs sysfs $LFS/sys
+mount -vt tmpfs tmpfs $LFS/run
+```
+
+How to change to chroot environment?
+```Bash
+chroot "$LFS" /usr/bin/env -i   \
+    HOME=/root                  \
+    TERM="$TERM"                \
+    PS1='(lfs chroot) \u:\w\$ ' \
+    PATH=/usr/bin:/usr/sbin     \
+    /bin/bash --login
+```
