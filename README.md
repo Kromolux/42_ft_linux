@@ -158,6 +158,7 @@ How to check partions and disks?
 fdisk -l
 df -h
 lsblk
+blkid /dev/sdb*
 ```
 
 How to create an environmental variable for multithread compilation with Makefile?
