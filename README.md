@@ -184,3 +184,6 @@ chroot "$LFS" /usr/bin/env -i   \
     PATH=/usr/bin:/usr/sbin     \
     /bin/bash --login
 ```
+
+How to run grub config?
+```grub-mkconfig --output=/boot/grub/grub.cfg```
